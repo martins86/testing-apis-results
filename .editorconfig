@@ -1,0 +1,20 @@
+# Editor configuration, see https://editorconfig.org
+
+# Declarada como config root
+root = true
+
+[*]
+# Caracteres no UTF-8
+charset = utf-8
+# Identa por espaço não por tab
+indent_style = space
+# identa por 2 espaços
+indent_size = 2
+# Adiciona uma linha ao final do arquivo
+insert_final_newline = true
+# Apaga os espaços em branco ao final de cada linha
+trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

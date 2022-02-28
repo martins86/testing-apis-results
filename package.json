@@ -4,9 +4,19 @@
   "description": "Comparando os retornos das apis V1 e V2 para cobertura do refactor.",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
 }
