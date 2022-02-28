@@ -1,0 +1,12 @@
+{
+  "name": "testing-apis-results",
+  "version": "1.0.0",
+  "description": "Comparando os retornos das apis V1 e V2 para cobertura do refactor.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
