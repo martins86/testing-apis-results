@@ -1,4 +1,7 @@
-# Testando retorno das apis
+# Testando retornos
+
+> Teste comparativo de resultados da api na v1 com a v2.
+> Objetivo é validar e ajudar no refactor de uma api da v1 para a v2.
 
 ### Comandos
 
