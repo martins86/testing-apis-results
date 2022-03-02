@@ -1,40 +1,47 @@
 import fetch from "cross-fetch";
+import variables from "../../shared/variables";
 
-const env = {
-  endpoint: "RS/Porto Alegre/Domingos/json/",
-  old: "http://viacep.com.br/ws",
-  new: "http://viacep.com.br/ws",
-};
+// endpoint para os testes
+const endpoint = "RS/Porto Alegre/Domingos/json/";
 
-const routeTest = {
-  old: `${env.old}/${env.endpoint}`,
-  new: `${env.new}/${env.endpoint}`,
-};
-
-let response = {
-  old: null,
-  new: null,
-};
-
+// Testando o retorno de uma rota get com os códigos postais de uma cidade.
+// primeiro teste: as duas rotas devem retornar com sucesso (code: 200 e msg: ok).
+// segundo teste: as duas rotas devem ter retornado o mesmo resultado (um json com uma lista de cep´s).
+// outros testes: as duas rotas get devem retornar os codes 403, 404 e 500.
 describe("Testando a rota com códigos postais de Porto Alegre - RS", () => {
-  test("Deve retornar com sucesso 200 Api V1", async () => {
-    response.new = await fetch(routeTest.new);
-
-    expect(response.new.status).toBe(200);
-    expect(response.new.statusText).toBe("OK");
+  // limpa os valores em response ao final de todos os testes deste grupo
+  beforeAll(() => {
+    variables.resetValues();
   });
 
-  test("Deve retornar com sucesso 200 Api V2", async () => {
-    response.old = await fetch(routeTest.old);
+  test("Deve retornar com sucesso 200 a Api V1(old)", async () => {
+    // Act
+    variables.response.old = await fetch(
+      `${variables.routeTest.old}${endpoint}`
+    );
 
-    expect(response.old.status).toBe(200);
-    expect(response.old.statusText).toBe("OK");
+    // Assert
+    expect(variables.response.old.status).toBe(200);
+    expect(variables.response.old.statusText).toBe("OK");
   });
 
-  test("Deve ser o mesmo resultado pra V1 e V2", async () => {
-    const bodyOld = await response.old.json();
-    const bodyNew = await response.new.json();
+  test("Deve retornar com sucesso 200 a Api V2(new)", async () => {
+    // Act
+    variables.response.new = await fetch(
+      `${variables.routeTest.new}${endpoint}`
+    );
 
+    // Assert
+    expect(variables.response.new.status).toBe(200);
+    expect(variables.response.new.statusText).toBe("OK");
+  });
+
+  test("Deve ser o mesmo resultado pra V1(old) e V2(new)", async () => {
+    // Act
+    const bodyOld = await variables.response.old.json();
+    const bodyNew = await variables.response.new.json();
+
+    // Assert
     expect(bodyOld).toEqual(bodyNew);
   });
 });
