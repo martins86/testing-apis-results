@@ -13,6 +13,20 @@ Lib para realizar as req async - [cross-fetch](https://www.npmjs.com/package/cro
 
 Mock api json server - [my-json-server](https://my-json-server.typicode.com/) <br>
 
+## Exemplo de mock
+
+```
+# Cria um db.json na raiz do repositorio
+./testing-apis-results/db.json
+
+# Depois consome nessa rota
+https://my-json-server.typicode.com/martins86/testing-apis-results
+
+# Posts
+https://my-json-server.typicode.com/martins86/testing-apis-results/posts
+
+```
+
  <br>
 
 # Comandos
