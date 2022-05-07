@@ -11,6 +11,8 @@ Framework de Testes - [Jest](https://jestjs.io/pt-BR/docs/getting-started)
 
 Lib para realizar as req async - [cross-fetch](https://www.npmjs.com/package/cross-fetch) <br>
 
+Mock api json server - [my-json-server](https://my-json-server.typicode.com/) <br>
+
  <br>
 
 # Comandos
